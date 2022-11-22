@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="frontend/css/styles.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <title>JustStreamIt</title>
 </head>
 <body>
@@ -21,14 +21,16 @@
     </div>
     <!-- En-tête avec logo et navigation -->
     <header>
-        <img class="logo" src="images/logo.png" alt="logo du site">
+        <img class="logo" src="./images/logo.png" alt="logo du site" />
         <nav>
-            <li>Accueil<hr class="nav-line"></li>
-            <ul class="drop-down">Catégories<hr class="nav-line">
+            <ul><li>Accueil</li></ul>
+            <hr class="nav-line">
+            <ul class="drop-down">Catégories
                 <li><a href=#fantasy>Fantasy</a></li>
                 <li><a href=#animation>Animation</a></li>
                 <li><a href=#action>Action</a></li>
             </ul>
+            <hr class="nav-line" />
         </nav>
     </header>
     <!-- film au meilleur score imdb -->
@@ -44,36 +46,36 @@
     </section>
     <!-- 7 films suivants les mieux notés -->
     <section class="film-section">
-        <h2>Films les mieux notés<hr></h2>
+        <h2>Films les mieux notés</h2><hr />
         <div class="film-list sevenBest">
-            <img class="cursor-left" src="Images/flecheGauche.png" alt="fleche de défilement" onclick="goLeft(bestFilms)">
-            <img class="cursor-right" src="Images/flecheDroite.png" alt="fleche de défilement" onclick="goRight(bestFilms)">
+            <img class="cursor-left" src="./images/flecheGauche.png" alt="fleche de défilement" onclick="goLeft(bestFilms)">
+            <img class="cursor-right" src="./images/flecheDroite.png" alt="fleche de défilement" onclick="goRight(bestFilms)">
         </div>
     </section>
     <!-- Section Fantasy -->
     <section class="film-section">
-        <h2 id="fantasy">Fantasy<hr></h2>
+        <h2 id="fantasy">Fantasy</h2><hr />
         <div class="film-list fantasy">
-            <img class="cursor-left" src="Images/flecheGauche.png" alt="fleche de défilement" onclick="goLeft(zoneFantasy)">
-            <img class="cursor-right" src="Images/flecheDroite.png" alt="fleche de défilement" onclick="goRight(zoneFantasy)">
+            <img class="cursor-left" src="./images/flecheGauche.png" alt="fleche de défilement" onclick="goLeft(zoneFantasy)">
+            <img class="cursor-right" src="./images/flecheDroite.png" alt="fleche de défilement" onclick="goRight(zoneFantasy)">
         </div>
     </section>
     <!-- Section Animation -->
     <section class="film-section">
-        <h2 id="animation">Animation<hr></h2>
+        <h2 id="animation">Animation</h2><hr />
         <div class="film-list animation">
-            <img class="cursor-left" src="Images/flecheGauche.png" alt="fleche de défilement" onclick="goLeft(zoneAnimation)">
-            <img class="cursor-right" src="Images/flecheDroite.png" alt="fleche de défilement" onclick="goRight(zoneAnimation)">
+            <img class="cursor-left" src="./images/flecheGauche.png" alt="fleche de défilement" onclick="goLeft(zoneAnimation)">
+            <img class="cursor-right" src="./images/flecheDroite.png" alt="fleche de défilement" onclick="goRight(zoneAnimation)">
         </div>
     </section>
     <!-- Section Action -->
     <section class="film-section">
-        <h2 id="action">Action<hr></h2>
+        <h2 id="action">Action</h2><hr />
         <div class="film-list action">
-            <img class="cursor-left" src="Images/flecheGauche.png" alt="fleche de défilement" onclick="goLeft(zoneAction)">
-            <img class="cursor-right" src="Images/flecheDroite.png" alt="fleche de défilement" onclick="goRight(zoneAction)">
+            <img class="cursor-left" src="./images/flecheGauche.png" alt="fleche de défilement" onclick="goLeft(zoneAction)">
+            <img class="cursor-right" src="./images/flecheDroite.png" alt="fleche de défilement" onclick="goRight(zoneAction)">
         </div>
     </section>
-    <script src="frontend/js/fetch.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
