@@ -42,6 +42,9 @@ img.logo {
     margin: 35px;
     cursor: auto;
 }
+.line-nav {
+    width: 50%;
+}
 header nav {
     height: 100%;
     flex: 1;
