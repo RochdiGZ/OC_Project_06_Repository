@@ -1,7 +1,7 @@
 // Récupération des url
 const urlMaxImdb = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score";
-const urlFantasy = "http://localhost:8000/api/v1/titles/?genre=fantasy&sort_by=-imdb_score";
-const urlAnimation = "http://localhost:8000/api/v1/titles/?genre=animation&sort_by=-imdb_score";
+const urlComedy = "http://localhost:8000/api/v1/titles/?genre=comedy&sort_by=-imdb_score";
+const urlFamily = "http://localhost:8000/api/v1/titles/?genre=family&sort_by=-imdb_score";
 const urlAction = "http://localhost:8000/api/v1/titles/?genre=action&sort_by=-imdb_score";
 
 // film au plus haut score imdb
@@ -93,10 +93,10 @@ function sevenFetch (urltest, className, number=7, takeFirst= false){
         .catch(function(err){})
 }
 
-// Récupération des info pour les mieux notés et les genres fantasy, animation et action
+// Récupération des info pour les mieux notés et les genres Comedy, Family et action
 sevenFetch(urlMaxImdb,className="sevenBest", number=7, takeFirst= true)
-sevenFetch(urlFantasy, className="fantasy")
-sevenFetch(urlAnimation, className="animation")
+sevenFetch(urlFantasy, className="comedy")
+sevenFetch(urlAnimation, className="family")
 sevenFetch(urlAction, className="action")
 
 // Fonction pour récupérer les info des films
@@ -144,9 +144,9 @@ for (cursorRight of cursorsRight){
 }
 
 // Fonction pour le défilement latéral(fleches)
+let zoneComedy = document.getElementsByClassName("comedy")[0];
+let zoneFamily = document.getElementsByClassName("family")[0];
 let zoneAction = document.getElementsByClassName("action")[0];
-let zoneAnimation = document.getElementsByClassName("animation")[0];
-let zoneFantasy = document.getElementsByClassName("fantasy")[0];
 let bestFilms = document.getElementsByClassName("sevenBest")[0];
 function goLeft(zone){
     zone.scrollBy({

@@ -3,8 +3,8 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    margin: 0;
-    background-color: whitesmoke;
+    background-color: black;
+    margin : 25px
 }
 p, a {
     font-size: 20px;
@@ -132,7 +132,7 @@ button:hover {
     align-items: center;
     justify-content: center;
     height: 450px;
-    background-color:whitesmoke;
+    background-color: whitesmoke;
 }
 .film-list {
     overflow: scroll;
