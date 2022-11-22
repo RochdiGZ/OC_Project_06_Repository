@@ -30,7 +30,6 @@
                 <li><a href=#family>Family</a></li>
                 <li><a href=#action>Action</a></li>
             </ul>
-            <hr class="nav-line" />
         </nav>
     </header>
     <!-- film au meilleur score imdb -->
@@ -46,7 +45,7 @@
     </section>
     <!-- 7 films suivants les mieux notés -->
     <section class="film-section">
-        <h2>Films les mieux notés</h2><hr />
+        <hr /><h2>Films les mieux notés</h2>
         <div class="film-list sevenBest">
             <img class="cursor-left" src="./images/flecheGauche.png" alt="fleche de défilement" onclick="goLeft(bestFilms)">
             <img class="cursor-right" src="./images/flecheDroite.png" alt="fleche de défilement" onclick="goRight(bestFilms)">
@@ -54,27 +53,28 @@
     </section>
     <!-- Section Comedy -->
     <section class="film-section">
-        <h2 id="comedy">Comedy</h2><hr />
-        <div class="film-list fantasy">
-            <img class="cursor-left" src="./images/flecheGauche.png" alt="fleche de défilement" onclick="goLeft(zoneFantasy)">
-            <img class="cursor-right" src="./images/flecheDroite.png" alt="fleche de défilement" onclick="goRight(zoneFantasy)">
+        <hr /><h2 id="comedy">Comedy</h2>
+        <div class="film-list comedy">
+            <img class="cursor-left" src="./images/flecheGauche.png" alt="fleche de défilement" onclick="goLeft(zoneComedy)">
+            <img class="cursor-right" src="./images/flecheDroite.png" alt="fleche de défilement" onclick="goRight(zoneComedy)">
         </div>
     </section>
     <!-- Section Family -->
     <section class="film-section">
-        <h2 id="family">Family</h2><hr />
-        <div class="film-list animation">
-            <img class="cursor-left" src="./images/flecheGauche.png" alt="fleche de défilement" onclick="goLeft(zoneAnimation)">
-            <img class="cursor-right" src="./images/flecheDroite.png" alt="fleche de défilement" onclick="goRight(zoneAnimation)">
+        <hr /><h2 id="family">Family</h2>
+        <div class="film-list family">
+            <img class="cursor-left" src="./images/flecheGauche.png" alt="fleche de défilement" onclick="goLeft(zoneFamily)">
+            <img class="cursor-right" src="./images/flecheDroite.png" alt="fleche de défilement" onclick="goRight(zoneFamily)">
         </div>
     </section>
     <!-- Section Action -->
     <section class="film-section">
-        <h2 id="action">Action</h2><hr />
+        <hr /><h2 id="action">Action</h2>
         <div class="film-list action">
             <img class="cursor-left" src="./images/flecheGauche.png" alt="fleche de défilement" onclick="goLeft(zoneAction)">
             <img class="cursor-right" src="./images/flecheDroite.png" alt="fleche de défilement" onclick="goRight(zoneAction)">
         </div>
+        <br /><hr />
     </section>
     <script src="./js/script.js"></script>
 </body>

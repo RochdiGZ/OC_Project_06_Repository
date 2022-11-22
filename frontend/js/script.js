@@ -51,7 +51,7 @@ function sevenFetch (urltest, className, number=7, takeFirst= false){
             let next = value["next"]
             let info = value["results"]
             let nbResults = info.length
-            for(i= 0; i<nbResults; i++ ){
+            for(i= 0; i<nbResults; i++){
                 var urlinfo = info[i]["url"];
                 if (takeFirst){
                     takeFirst=false
@@ -95,8 +95,8 @@ function sevenFetch (urltest, className, number=7, takeFirst= false){
 
 // Récupération des info pour les mieux notés et les genres Comedy, Family et action
 sevenFetch(urlMaxImdb,className="sevenBest", number=7, takeFirst= true)
-sevenFetch(urlFantasy, className="comedy")
-sevenFetch(urlAnimation, className="family")
+sevenFetch(urlComedy, className="comedy")
+sevenFetch(urlFamily, className="family")
 sevenFetch(urlAction, className="action")
 
 // Fonction pour récupérer les info des films
@@ -144,10 +144,10 @@ for (cursorRight of cursorsRight){
 }
 
 // Fonction pour le défilement latéral(fleches)
+let bestFilms = document.getElementsByClassName("sevenBest")[0];
 let zoneComedy = document.getElementsByClassName("comedy")[0];
 let zoneFamily = document.getElementsByClassName("family")[0];
 let zoneAction = document.getElementsByClassName("action")[0];
-let bestFilms = document.getElementsByClassName("sevenBest")[0];
 function goLeft(zone){
     zone.scrollBy({
         left : -300,
