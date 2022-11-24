@@ -25,16 +25,16 @@ closeModal.onclick = function(){
 
 // Info modal
 let imgModal = document.getElementsByClassName("img-modal")[0]
-let textModal = document.getElementsByClassName("modal-txt")[0]
+let textModal = document.getElementsByClassName("text-modal")[0]
 
 // Fonction pour la durée des films
 function timeH(time){
-    if (time > 60){
+    if (time >= 60) {
         let hour = Math.floor(time/60);
         let minute = time % 60;
-        return hour+"h "+ minute+"min"
+        return hour+" h "+ minute + " min"
     }
-    if (time <60){
+    else {
         return time+"min"
     }
 }

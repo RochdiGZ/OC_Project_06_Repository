@@ -87,14 +87,19 @@ nav li, .drop-down, .drop-down li a{
     height: 300px;
     margin: 20px ;
 }
+.img-play {
+    width: 60px;
+    height: 16px;
+    cursor: pointer;
+}
 button {
-    width: 80px;
-    height: 30px;
-    background-color: rgb(223, 71, 71);
-    border-radius: 30px;
-    border: 0px;
-    color: white;
+    width: 100px;
+    height: 20px;
+    background-color: gold;
+    color: black;
     font-size: 15px;
+    font-weight: bold;
+    align-text: center;
     cursor: pointer;
 }
 button:hover {
