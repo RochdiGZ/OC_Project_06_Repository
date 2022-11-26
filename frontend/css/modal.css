@@ -5,13 +5,12 @@
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
 }
 #modal {
     display: none;
     position: fixed;
-    background-color: white;
+    background-color: yellow;
     border: rgb(98, 112, 124) 20px solid;
     max-height: 50%;
     bottom: 0%;
@@ -32,10 +31,10 @@
 }
 .close {
     text-align: center;
-    background-color: white;
+    background-color: grey;
     border: rgba(0, 0, 0, 0.253) 1px solid;
-    height: 35px;
-    width: 35px;
+    max-height: 25px;
+    max-width: 25px;
     position: fixed;
     color: black;
     font-weight: 700;
@@ -43,7 +42,6 @@
     cursor: pointer;
     z-index: 10;
     right: 52%;
-
 }
 .text-modal p {
     font-size: 16px;
@@ -58,5 +56,4 @@ p em {
 }
 .text-modal {
     padding-top: 40px;
-
 }

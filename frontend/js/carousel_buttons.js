@@ -19,14 +19,14 @@ let zoneFamily = document.getElementsByClassName("family")[0];
 let zoneAction = document.getElementsByClassName("action")[0];
 function goLeft(zone){
     zone.scrollBy({
-        left : -230,
+        left : -228,
         behavior : "smooth"
     }
     )
 }
 function goRight(zone){
     zone.scrollBy({
-        left : 230,
+        left : 228,
         behavior : "smooth"
     }
     )

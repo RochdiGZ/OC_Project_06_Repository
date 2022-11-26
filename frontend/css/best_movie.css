@@ -1,4 +1,3 @@
-
 .img-play {
     width: 60px;
     height: 16px;
@@ -46,6 +45,6 @@ button:hover {
 .title-best-film {
     font-size: 30px;
 }
-.abstract {
+.description {
     max-width: 900px;
 }
