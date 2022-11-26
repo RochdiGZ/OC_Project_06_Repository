@@ -67,7 +67,7 @@ function timeH(time){
 }
 
 // Fonction récupérant 7 films à la suite
-function fetchMovies(url, className, number=7, takeFirst=false) {
+function fetchMovies(url, className, number=7, topMovie=false) {
     try {
         const movies = fetchData(url);
         movies.then((moviesData) => {
@@ -75,38 +75,26 @@ function fetchMovies(url, className, number=7, takeFirst=false) {
             let info = moviesData["results"];
             for(i=0; i < info.length; i++) {
                 var movieUrl = info[i]["url"];
-                if (takeFirst) {
-                    takeFirst=false;
-                    // film au plus haut score imdb
+                if (topMovie) {
+                    // Récupérer les informations du meilleur film
                     let img = document.getElementsByClassName("img-best")[0];
                     movieInfo(img, movieUrl);
                     let button = document.getElementsByClassName("button")[0];
                     movieInfo(button, movieUrl);
-                    /*
-                    let movie = fetchData(movieUrl);
-                    movie.then((data) {
-                        let title = document.getElementsByClassName("title-best-film")[0];
-                        title.innerHTML = data["title"];
-                        let description = document.getElementsByClassName("description")[0];
-                        description.innerHTML = data["long_description"];
-                        img.setAttribute("src", data["image_url"]);
-                    })
-                    */
-                    fetch(movieUrl)
-                        .then(function(res) {
-                            if (res.ok) {
-                                return res.json();
-                            }
-                        })
-                        .then(function(data) {
+                    try {
+                        const movieJson = fetchData(movieUrl);
+                        movieJson.then(function(data) {
                             let title = document.getElementsByClassName("title-best-film")[0];
                             title.innerHTML = data["title"];
                             let description = document.getElementsByClassName("description")[0];
                             description.innerHTML = data["long_description"];
                             img.setAttribute("src", data["image_url"]);
                         })
-                        .catch(function(err) { alert("Erreur")});
-                    continue;
+                    }
+                    catch(error){
+                        console.error("Impossible de récupérer les informations du meilleur film : ${error}");
+                    }
+                    topMovie=false; // Récupérer les informations des autres meilleurs films
                 }
                 let imgUrl = info[i]["image_url"];
                 let section = document.getElementsByClassName(className)[0];
@@ -131,17 +119,15 @@ function fetchMovies(url, className, number=7, takeFirst=false) {
         console.error("Impossible de récupérer les informations des films : ${error}");
     }
 }
-
-// Récupération des url
-const urlMaxImdb = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score";
-const urlComedy = "http://localhost:8000/api/v1/titles/?genre=comedy&sort_by=-imdb_score";
-const urlFamily = "http://localhost:8000/api/v1/titles/?genre=family&sort_by=-imdb_score";
-const urlAction = "http://localhost:8000/api/v1/titles/?genre=action&sort_by=-imdb_score";
 // Récupération d'informations des meilleurs films
-fetchMovies(urlMaxImdb, className="sevenBest", number=7, takeFirst=true);
+const urlMaxImdb = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score";
+fetchMovies(urlMaxImdb, className="sevenBest", number=7, topMovie=true);
 // Récupération d'informations des films les mieux notés pour la catégrie "Comedy"
+const urlComedy = "http://localhost:8000/api/v1/titles/?genre=comedy&sort_by=-imdb_score";
 fetchMovies(urlComedy, className="comedy");
 // Récupération d'informations des films les mieux notés pour la catégrie "Family"
+const urlFamily = "http://localhost:8000/api/v1/titles/?genre=family&sort_by=-imdb_score";
 fetchMovies(urlFamily, className="family");
 // Récupération d'informations des films les mieux notés pour la catégrie "Action"
+const urlAction = "http://localhost:8000/api/v1/titles/?genre=action&sort_by=-imdb_score";
 fetchMovies(urlAction, className="action");
