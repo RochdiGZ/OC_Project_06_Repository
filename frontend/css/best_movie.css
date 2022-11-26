@@ -1,0 +1,51 @@
+
+.img-play {
+    width: 60px;
+    height: 16px;
+    cursor: pointer;
+}
+button {
+    width: 100px;
+    height: 20px;
+    background-color: gold;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    align-text: center;
+    cursor: pointer;
+}
+button:hover {
+    background-color:rgba(223, 71, 71, 0.7);
+    border: rgb(223, 71, 71) 2px solid;
+
+}
+
+.best-film {
+    display: flex;
+    justify-content: space-around;
+    border: black 5px solid;
+    height: 300px;
+    margin: 20px ;
+}
+.in-best-film {
+    flex: 2;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+}
+.img-zone {
+    flex: 1;
+    text-align: center;
+}
+.img-best {
+    height: 100%;
+}
+.title-best-film {
+    font-size: 30px;
+}
+.abstract {
+    max-width: 900px;
+}
