@@ -20,12 +20,15 @@ header nav {
     align-items: center;
     justify-content: space-evenly;
 }
-nav li, .drop-down, .drop-down li a{
+nav li, .drop-down, .accueil, .drop-down li a{
     list-style: none;
-    font-size: 18px;
-    color: white;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
+}
+.accueil {
+    align-self: flex-start;
+    display: flex;
 }
 .drop-down{
     width: 120px;
@@ -35,6 +38,9 @@ nav li, .drop-down, .drop-down li a{
 }
 .drop-down li a {
     display: none;
+}
+.drop-down li a:hover {
+    text-decoration: underline;
 }
 .drop-down:hover li a{
     display: inline;

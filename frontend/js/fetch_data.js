@@ -9,6 +9,17 @@ async function fetchData(url) {
             alert("HTTP-Error: " + response.status);
     }
 }
+// Fonction pour la durée des films
+function timeH(time){
+    if (time >= 60) {
+        let hour = Math.floor(time/60);
+        let minute = time % 60;
+        return hour + " h "+ minute + " min";
+    }
+    else {
+        return time + "min";
+    }
+}
 // Récupérer les informations d'un film lors d'un évennement (clic) sur un élément (bouton ou image)
 function movieInfo(element, url){
     try {
@@ -54,15 +65,23 @@ closeModal.onclick = function(){
 let imgModal = document.getElementsByClassName("img-modal")[0];
 let textModal = document.getElementsByClassName("text-modal")[0];
 
-// Fonction pour la durée des films
-function timeH(time){
-    if (time >= 60) {
-        let hour = Math.floor(time/60);
-        let minute = time % 60;
-        return hour+" h "+ minute + " min";
+function bestMovie(Movieurl) {
+    let img = document.getElementsByClassName("img-best")[0];
+    movieInfo(img, movieUrl);
+    let button = document.getElementsByClassName("button")[0];
+    movieInfo(button, movieUrl);
+    try {
+        const movieJson = fetchData(movieUrl);
+        movieJson.then(function(data) {
+            let title = document.getElementsByClassName("title-best-film")[0];
+            title.innerHTML = data["title"];
+            let description = document.getElementsByClassName("description")[0];
+            description.innerHTML = data["long_description"];
+            img.setAttribute("src", data["image_url"]);
+        })
     }
-    else {
-        return time+"min";
+    catch(error){
+        console.error("Impossible de récupérer les informations du meilleur film : ${error}");
     }
 }
 
@@ -77,23 +96,7 @@ function fetchMovies(url, className, number=7, topMovie=false) {
                 var movieUrl = info[i]["url"];
                 if (topMovie) {
                     // Récupérer les informations du meilleur film
-                    let img = document.getElementsByClassName("img-best")[0];
-                    movieInfo(img, movieUrl);
-                    let button = document.getElementsByClassName("button")[0];
-                    movieInfo(button, movieUrl);
-                    try {
-                        const movieJson = fetchData(movieUrl);
-                        movieJson.then(function(data) {
-                            let title = document.getElementsByClassName("title-best-film")[0];
-                            title.innerHTML = data["title"];
-                            let description = document.getElementsByClassName("description")[0];
-                            description.innerHTML = data["long_description"];
-                            img.setAttribute("src", data["image_url"]);
-                        })
-                    }
-                    catch(error){
-                        console.error("Impossible de récupérer les informations du meilleur film : ${error}");
-                    }
+                    bestMovie(movieUrl)
                     topMovie=false; // Récupérer les informations des autres meilleurs films
                 }
                 let imgUrl = info[i]["image_url"];
