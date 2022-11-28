@@ -14,11 +14,9 @@ button {
     cursor: pointer;
 }
 button:hover {
-    background-color:rgba(223, 71, 71, 0.7);
-    border: rgb(223, 71, 71) 2px solid;
-
+    background-color:green;
+    border: yellow 2px solid;
 }
-
 .best-film {
     display: flex;
     justify-content: space-around;

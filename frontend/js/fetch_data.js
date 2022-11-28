@@ -65,10 +65,12 @@ closeModal.onclick = function(){
 let imgModal = document.getElementsByClassName("img-modal")[0];
 let textModal = document.getElementsByClassName("text-modal")[0];
 
-function bestMovie(Movieurl) {
+function bestMovie(movieUrl) {
     let img = document.getElementsByClassName("img-best")[0];
+    // Afficher la fenêtre modale si on clique sur l'image ayant la propriété class="img-best"
     movieInfo(img, movieUrl);
     let button = document.getElementsByClassName("button")[0];
+    // Afficher la fenêtre modale si on clique sur le boutton ayant la propriété class="button"
     movieInfo(button, movieUrl);
     try {
         const movieJson = fetchData(movieUrl);
@@ -90,7 +92,6 @@ function fetchMovies(url, className, number=7, topMovie=false) {
     try {
         const movies = fetchData(url);
         movies.then((moviesData) => {
-            let next = moviesData["next"];
             let info = moviesData["results"];
             for(i=0; i < info.length; i++) {
                 var movieUrl = info[i]["url"];
@@ -99,22 +100,28 @@ function fetchMovies(url, className, number=7, topMovie=false) {
                     bestMovie(movieUrl)
                     topMovie=false; // Récupérer les informations des autres meilleurs films
                 }
+                // Récupérer l'url de l'image du film
                 let imgUrl = info[i]["image_url"];
-                let section = document.getElementsByClassName(className)[0];
-                newDiv = document.createElement("div");
+                // Créer la balise img en ajoutant les propriétés class="img-film" et src=imgUrl
                 newImage = document.createElement("img");
                 newImage.setAttribute("class", "img-film");
                 newImage.setAttribute("src", imgUrl);
+                // Afficher la fenêtre modale si on clique sur l'image récupérée
                 movieInfo(newImage, movieUrl);
+                // Créer la balise div qui contient l'image récupérée d'une catégorie className
+                newDiv = document.createElement("div");
+                let section = document.getElementsByClassName(className)[0];
                 section.appendChild(newDiv);
                 newDiv.appendChild(newImage);
+
                 number--
                 if (number==0){
                     break;
                 }
             }
-            if (number>0) {
-                fetchMovies(next, className, number);
+            if (number > 0) {
+                let nextUrl = moviesData["next"];
+                fetchMovies(nextUrl, className, number);
             }
         })
     }
