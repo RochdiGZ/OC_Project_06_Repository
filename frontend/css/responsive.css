@@ -1,5 +1,5 @@
 @media screen and (max-width : 640px) {
-    /* fenêtre modale */
+    /* window modal */
     #modal {
         border: rgb(98, 112, 124) 10px solid;
         right: 0%;
@@ -17,11 +17,11 @@
         font-size: 18px;
     }
 
-    /* Film mis en avant */
+    /* Best movie */
     .title-best-film {
         font-size: 16px;
     }
-    .abstract{
+    .description {
         font-size: 14px;
         flex-wrap: nowrap;
         overflow: scroll;
@@ -31,7 +31,7 @@
         max-width: 50%;
         display: flex;
     }
-    .img-best{
+    .img-best {
         height: 80%;
         align-self: center;
         padding-right: 10px;
@@ -40,7 +40,7 @@
         right: 10px;
 
     }
-    /* section de film */
+    /* Carousel */
     .cursor-left, .cursor-right {
         filter: invert(100%) ;
         height: 75px;
@@ -53,7 +53,7 @@
         height: 250px;
         width: 100%;
     }
-    .film-list div{
+    .film-list div {
         height: 200px;
         min-width: 150px;
         margin: 0px 10px;
