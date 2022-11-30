@@ -10,9 +10,9 @@
 #modal {
     display: none;
     position: fixed;
-    background-color: yellow;
+    background-color: white;
     border: rgb(98, 112, 124) 20px solid;
-    max-height: 50%;
+    height: 50%;
     bottom: 0%;
     left: 0%;
     right: 50%;

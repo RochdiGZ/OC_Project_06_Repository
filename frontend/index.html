@@ -14,7 +14,7 @@
     <title>JustStreamIt</title>
 </head>
 <body>
-    <!-- En-tête avec logo et navigation -->
+    <!-- Header -->
     <header>
         <img class="logo" src="./images/logo.png" alt="logo du site" />
          <nav>
@@ -28,7 +28,7 @@
             </ul>
         </nav>
     </header>
-    <!-- film au meilleur score imdb -->
+    <!-- Best movie -->
     <section class="best-film">
         <div class="in-best-film">
             <h2 class="title-best-film"></h2>
@@ -42,7 +42,7 @@
             <img class="img-best" src="" alt="">
         </div>
     </section>
-    <!-- 7 films suivants les mieux notés -->
+    <!-- Best movies of all -->
     <section class="film-section">
         <hr /><h2>Films les mieux notés</h2>
         <div class="film-list sevenBest">
@@ -50,7 +50,7 @@
             <img class="cursor-right" src="./images/right.png" alt="fleche de défilement" onclick="goRight(bestFilms)">
         </div>
     </section>
-    <!-- Section Comedy -->
+    <!-- Best movies of comedy genre -->
     <section class="film-section">
         <hr /><h2 id="comedy">Comedy</h2>
         <div class="film-list comedy">
@@ -58,7 +58,7 @@
             <img class="cursor-right" src="./images/right.png" alt="fleche de défilement" onclick="goRight(zoneComedy)">
         </div>
     </section>
-    <!-- Section Family -->
+    <!-- Best movies of family genre -->
     <section class="film-section">
         <hr /><h2 id="family">Family</h2>
         <div class="film-list family">
@@ -66,7 +66,7 @@
             <img class="cursor-right" src="./images/right.png" alt="fleche de défilement" onclick="goRight(zoneFamily)">
         </div>
     </section>
-    <!-- Section Action -->
+    <!-- Best movies of action genre -->
     <section class="film-section">
         <hr /><h2 id="action">Action</h2>
         <div class="film-list action">
@@ -75,7 +75,7 @@
         </div>
         <br /><hr />
     </section>
-    <!-- Fenêtre modale -->
+    <!-- modal window -->
     <div id="modal" class="background-modal">
         <div class="modal-content">
             <span class="close">&times;</span>
