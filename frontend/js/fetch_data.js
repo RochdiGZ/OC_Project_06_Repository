@@ -27,14 +27,9 @@ function movieInfo(element, url){
         element.addEventListener("click", function() {
             const movie = fetchData(url);
             movie.then((data) => {
-                let divTag = document.getElementsByClassName("img-modal")[0];
-                // Créer la balise img qui contient l'image récupérée d'un meilleur film
-                imgTag = document.createElement("img");
-                divTag.appendChild(imgTag);
+                let imgTag = document.getElementsByClassName("img-modal")[0];
                 // Ajouter les propriétés de la balise img
                 imgTag.setAttribute("src", data["image_url"]);
-                imgTag.setAttribute("alt", "Movie image");
-                imgTag.setAttribute("id", "movie_image");
 
                 let textModal = document.getElementsByClassName("text-modal")[0];
                 textModal.innerHTML ="<em>Titre : </em>&emsp;" + data["title"]
@@ -89,6 +84,8 @@ function bestMovie(movieUrl) {
             imgTag.setAttribute("src", data["image_url"]);
             imgTag.setAttribute("alt", "Best movie");
             imgTag.setAttribute("id", "best_movie");
+            let bestSection = document.getElementByTagName("section")[0];
+            bestSection.style.backgroundImage = 'url("./images/best_movie.png")';
         })
     }
     catch(error){
