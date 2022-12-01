@@ -30,19 +30,20 @@ function movieInfo(element, url){
                 let imgTag = document.getElementsByClassName("img-modal")[0];
                 // Ajouter les propriétés de la balise img
                 imgTag.setAttribute("src", data["image_url"]);
+                imgTag.setAttribute("alt", "Movie image");
 
                 let textModal = document.getElementsByClassName("text-modal")[0];
-                textModal.innerHTML ="<em>Titre : </em>&emsp;" + data["title"]
-                + "<br /><em>Genre(s) : </em>&emsp;" + data["genres"]
-                +"<br /><em>Date de sortie : </em>&emsp;" + data["date_published"]
-                +"<br /><em>Note : </em>&emsp;" + data["rated"]
-                +"<br /><em>Score IMDB : </em>&emsp;" + data["imdb_score"]
-                +"<br /><em>Réalisateur : </em>&emsp;" + data["directors"]
-                +"<br /><em>Acteurs : </em>&emsp;" + data["actors"]
-                +"<br /><em>Durée : </em>&emsp;" + timeH(data["duration"])
-                +"<br /><em>Pays d'origine : </em>&emsp;" + data["countries"]
-                +"<br /><em>Score au Box-Office : </em>&emsp;" + data["worldwide_gross_income"]
-                +"<br /><em>Description : </em>&emsp;" + data["long_description"];
+                textModal.innerHTML ="<em>Titre :</em>&emsp;" + data["title"]
+                + "<br /><em>Genre(s) :</em>&emsp;" + data["genres"]
+                +"<br /><em>Date de sortie :</em>&emsp;" + data["date_published"]
+                +"<br /><em>Note :</em>&emsp;" + data["rated"]
+                +"<br /><em>Score IMDB :</em>&emsp;" + data["imdb_score"]
+                +"<br /><em>Réalisateur :</em>&emsp;" + data["directors"]
+                +"<br /><em>Acteurs :</em>&emsp;" + data["actors"]
+                +"<br /><em>Durée :</em>&emsp;" + timeH(data["duration"])
+                +"<br /><em>Pays d'origine :</em>&emsp;" + data["countries"]
+                +"<br /><em>Score au Box-Office :</em>&emsp;" + data["worldwide_gross_income"]
+                +"<br /><em>Description :</em>&emsp;" + data["long_description"];
                 let modal = document.getElementById("modal");
                 modal.style.display = "block";
                 let backgroundModal = document.getElementsByClassName("background-modal")[0];
@@ -84,8 +85,11 @@ function bestMovie(movieUrl) {
             imgTag.setAttribute("src", data["image_url"]);
             imgTag.setAttribute("alt", "Best movie");
             imgTag.setAttribute("id", "best_movie");
-            let bestSection = document.getElementByTagName("section")[0];
-            bestSection.style.backgroundImage = 'url("./images/best_movie.png")';
+            let bestSection = document.getElementsByClassName("best-film")[0].innerHTML;
+            let imgUrl= imgTag.getAttribute("src");
+            bestSection.style.backgroundImage = imgUrl;
+            // bestSection.setAttribute("style", "background-image : url(imgUrl)";
+            // bestSection.setAttribute("style", "background-repeat: repeat");
         })
     }
     catch(error){
