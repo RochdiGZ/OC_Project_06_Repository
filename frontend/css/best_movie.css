@@ -10,7 +10,7 @@ button {
     color: black;
     font-size: 15px;
     font-weight: bold;
-    align-text: center;
+    text-align: center;
     cursor: pointer;
 }
 button:hover {
