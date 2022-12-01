@@ -1,5 +1,10 @@
 /* Ajouter les propriétés de l'image du meilleur film */
 .best-film {
+    display: flex;
+    justify-content: space-around;
+    border: black 5px solid;
+    height: 268px;
+    margin: 20px ;
     background-image : url("../images/best_movie.jpg");
     background-repeat: repeat;
 }
@@ -21,13 +26,6 @@ button {
 button:hover {
     background-color:green;
     border: yellow 2px solid;
-}
-.best-film {
-    display: flex;
-    justify-content: space-around;
-    border: black 5px solid;
-    height: 268px;
-    margin: 20px ;
 }
 .in-best-film {
     flex: 2;
