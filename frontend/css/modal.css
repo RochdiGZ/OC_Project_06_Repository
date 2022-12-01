@@ -57,3 +57,7 @@ p em {
 .text-modal {
     padding-top: 40px;
 }
+.img-modal {
+    width: 35%;
+    height: 35%;
+}
