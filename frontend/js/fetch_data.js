@@ -20,13 +20,23 @@ function timeH(time){
         return time + "min";
     }
 }
+
 // Récupérer les informations d'un film lors d'un évennement (clic) sur un élément (bouton ou image)
 function movieInfo(element, url){
     try {
         element.addEventListener("click", function() {
             const movie = fetchData(url);
             movie.then((data) => {
-                imgModal.setAttribute("src", data["image_url"]);
+                let divTag = document.getElementsByClassName("img-modal")[0];
+                // Créer la balise img qui contient l'image récupérée d'un meilleur film
+                imgTag = document.createElement("img");
+                divTag.appendChild(imgTag);
+                // Ajouter les propriétés de la balise img
+                imgTag.setAttribute("src", data["image_url"]);
+                imgTag.setAttribute("alt", "Movie image");
+                imgTag.setAttribute("id", "movie_image");
+
+                let textModal = document.getElementsByClassName("text-modal")[0];
                 textModal.innerHTML ="<em>Titre : </em>&emsp;" + data["title"]
                 + "<br /><em>Genre(s) : </em>&emsp;" + data["genres"]
                 +"<br /><em>Date de sortie : </em>&emsp;" + data["date_published"]
@@ -38,8 +48,11 @@ function movieInfo(element, url){
                 +"<br /><em>Pays d'origine : </em>&emsp;" + data["countries"]
                 +"<br /><em>Score au Box-Office : </em>&emsp;" + data["worldwide_gross_income"]
                 +"<br /><em>Description : </em>&emsp;" + data["long_description"];
+                let modal = document.getElementById("modal");
                 modal.style.display = "block";
+                let backgroundModal = document.getElementsByClassName("background-modal")[0];
                 backgroundModal.style.display = "block";
+                body = document.getElementsByTagName("body")[0];
                 body.style.overflow = "hidden";
             })
         })
@@ -48,10 +61,6 @@ function movieInfo(element, url){
         console.error("Impossible de récupérer les informations du film : ${error}");
     }
 }
-// Les fenêtres modales
-var modal = document.getElementById("modal");
-var backgroundModal = document.getElementsByClassName("background-modal")[0];
-var body = document.getElementsByTagName("body")[0];
 
 // Croix fermeture fenêtre modale
 let closeModal = document.getElementsByClassName("close")[0];
@@ -61,14 +70,11 @@ closeModal.onclick = function(){
     body.style.overflow = "scroll";
 }
 
-// Info modal
-let imgModal = document.getElementsByClassName("img-modal")[0];
-let textModal = document.getElementsByClassName("text-modal")[0];
-
 function bestMovie(movieUrl) {
-    let img = document.getElementsByClassName("img-best")[0];
-    // Afficher la fenêtre modale si on clique sur l'image ayant la propriété class="img-best"
-    movieInfo(img, movieUrl);
+    let divTag = document.getElementsByClassName("img-best")[0];
+    // Créer la balise img qui contient l'image récupérée du meilleur film
+    imgTag = document.createElement("img");
+    divTag.appendChild(imgTag);
     let button = document.getElementsByClassName("button")[0];
     // Afficher la fenêtre modale si on clique sur le boutton ayant la propriété class="button"
     movieInfo(button, movieUrl);
@@ -79,7 +85,10 @@ function bestMovie(movieUrl) {
             title.innerHTML = data["title"];
             let description = document.getElementsByClassName("description")[0];
             description.innerHTML = data["long_description"];
-            img.setAttribute("src", data["image_url"]);
+            // Ajouter les propriétés de la balise img
+            imgTag.setAttribute("src", data["image_url"]);
+            imgTag.setAttribute("alt", "Best movie");
+            imgTag.setAttribute("id", "best_movie");
         })
     }
     catch(error){
