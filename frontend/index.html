@@ -1,85 +1,87 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/best_movie.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/modal.css" />
-    <link rel="stylesheet" href="./css/movie_category.css" />
-    <link rel="stylesheet" href="./css/responsive.css" />
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/best_movie.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/movie_category.css">
+    <link rel="stylesheet" href="./css/responsive.css">
     <title>JustStreamIt</title>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <img class="logo" src="./images/logo.png" alt="logo du site" />
-         <nav>
-            <ul class="accueil">Accueil</ul>
-         </nav>
-        <nav>
-            <ul class="drop-down">Catégories
+        <img class="logo" src="./images/logo.png" alt="logo du site">
+        <p class="accueil">Accueil</p><hr>
+        <ul class="drop-down">
+                <li>Catégories</li>
                 <li><a href=#comedy>Comedy</a></li>
                 <li><a href=#family>Family</a></li>
                 <li><a href=#action>Action</a></li>
-            </ul>
-        </nav>
+        </ul>
     </header>
     <!-- Best movie -->
     <section class="best-film">
         <div class="in-best-film">
-            <h2 class="title-best-film"></h2>
-            <span class="img_btn">
-                <img src="./images/play.png" class="img-play" />
-                <button id="button" class="button">Best movie</button>
-            </span>
+            <h2 class="title-best-film">.</h2><br>
             <p class="description"></p>
+            <span>
+                <img src="./images/play.png" class="img-play" alt="Play movie">
+                <img src="./images/more_info.png" class="button" alt="Best movie">
+            </span>
         </div>
-        <div class="img-zone">
-            <img class="img-best" src="" alt="">
-        </div>
+        <div class="img-best"></div>
     </section>
     <!-- Best movies of all -->
     <section class="film-section">
-        <hr /><h2>Films les mieux notés</h2>
+        <hr><h2>Films les mieux notés</h2>
         <div class="film-list sevenBest">
-            <img class="cursor-left" src="./images/left.png" alt="fleche de défilement" onclick="goLeft(bestFilms)">
-            <img class="cursor-right" src="./images/right.png" alt="fleche de défilement" onclick="goRight(bestFilms)">
+            <img class="cursor-left" src="./images/left.png" alt="Défilement à gauche"
+                 onclick="goLeft(bestFilms)">
+            <img class="cursor-right" src="./images/right.png" alt="Défilement à droite"
+                 onclick="goRight(bestFilms)">
         </div>
     </section>
     <!-- Best movies of comedy genre -->
     <section class="film-section">
-        <hr /><h2 id="comedy">Comedy</h2>
+        <hr><h2 id="comedy">Comedy</h2>
         <div class="film-list comedy">
-            <img class="cursor-left" src="./images/left.png" alt="fleche de défilement" onclick="goLeft(zoneComedy)">
-            <img class="cursor-right" src="./images/right.png" alt="fleche de défilement" onclick="goRight(zoneComedy)">
+            <img class="cursor-left" src="./images/left.png" alt="Défilement à gauche"
+                 onclick="goLeft(zoneComedy)">
+            <img class="cursor-right" src="./images/right.png" alt="Défilement à droite"
+                 onclick="goRight(zoneComedy)">
         </div>
     </section>
     <!-- Best movies of family genre -->
     <section class="film-section">
-        <hr /><h2 id="family">Family</h2>
+        <hr><h2 id="family">Family</h2>
         <div class="film-list family">
-            <img class="cursor-left" src="./images/left.png" alt="fleche de défilement" onclick="goLeft(zoneFamily)">
-            <img class="cursor-right" src="./images/right.png" alt="fleche de défilement" onclick="goRight(zoneFamily)">
+            <img class="cursor-left" src="./images/left.png" alt="Défilement à gauche"
+                 onclick="goLeft(zoneFamily)">
+            <img class="cursor-right" src="./images/right.png" alt="Défilement à droite"
+                 onclick="goRight(zoneFamily)">
         </div>
     </section>
     <!-- Best movies of action genre -->
     <section class="film-section">
-        <hr /><h2 id="action">Action</h2>
+        <hr><h2 id="action">Action</h2>
         <div class="film-list action">
-            <img class="cursor-left" src="./images/left.png" alt="fleche de défilement" onclick="goLeft(zoneAction)">
-            <img class="cursor-right" src="./images/right.png" alt="fleche de défilement" onclick="goRight(zoneAction)">
+            <img class="cursor-left" src="./images/left.png" alt="Défilement à gauche"
+                 onclick="goLeft(zoneAction)">
+            <img class="cursor-right" src="./images/right.png" alt="Défilement à droite"
+                 onclick="goRight(zoneAction)">
         </div>
-        <br /><hr />
+        <hr>
     </section>
     <!-- modal window -->
     <div id="modal" class="background-modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <img src="" class="img-modal">
+            <div class="img-modal"></div>
             <div class="text-modal">
                 <p></p>
             </div>
