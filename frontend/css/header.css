@@ -18,7 +18,7 @@ header nav {
     height: 100%;
     flex: 1;
     display: flex;
-    align-items: right;
+    align-items: center;
     justify-content: space-evenly;
 }
 nav li, .drop-down, .accueil, .drop-down li a{
