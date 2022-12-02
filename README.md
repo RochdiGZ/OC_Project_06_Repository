@@ -69,7 +69,12 @@ C. The steps to follow to open the web page index.html :
                 git clone https://github.com/RochdiGZ/OC_Project_06_Repository.git
         3.  Launch PyCharm and open the added project locally, in the working folder, named OC_Project_06_Repository
             and having been hosted on GitHub and containing the file named REDAME.md and the two folders named
-            backend and frontend :
+            backend and frontend.
+            At first, the OCMovies-API-EN-FR folder was retrieved from GitHub using the command:
+                git clone https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR
+            Afterwards, this folder was renamed by "backend" which contains the manage.py file which will be used :
+                - to create the database of films,
+                - to launch the server.
 
 
     V. Installation
