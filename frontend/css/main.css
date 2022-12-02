@@ -29,7 +29,7 @@ span {
 }
 span:hover {
     color: orange;
-    font-weigth: bold;
+    font-weight: bold;
 }
 img {
     transition: 0.5s;
