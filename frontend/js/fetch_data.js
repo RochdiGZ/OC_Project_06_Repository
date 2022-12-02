@@ -24,8 +24,8 @@ function timeH(time){
 // Récupérer les informations d'un film lors d'un évennement (clic) sur un élément (bouton ou image)
 function movieInfo(element, url){
     try {
-        element.addEventListener("click", function() {
-            const movie = fetchData(url);
+        element.addEventListener("click", function(event) {
+            let movie = fetchData(url);
             movie.then((data) => {
                 let imgTag = document.getElementsByClassName("img-modal")[0];
                 // Ajouter les propriétés de la balise img
@@ -33,23 +33,23 @@ function movieInfo(element, url){
                 imgTag.setAttribute("alt", "Movie image");
 
                 let textModal = document.getElementsByClassName("text-modal")[0];
-                textModal.innerHTML ="<em>Titre :</em>&emsp;" + data["title"]
-                + "<br /><em>Genre(s) :</em>&emsp;" + data["genres"]
-                +"<br /><em>Date de sortie :</em>&emsp;" + data["date_published"]
-                +"<br /><em>Note :</em>&emsp;" + data["rated"]
-                +"<br /><em>Score IMDB :</em>&emsp;" + data["imdb_score"]
-                +"<br /><em>Réalisateur :</em>&emsp;" + data["directors"]
-                +"<br /><em>Acteurs :</em>&emsp;" + data["actors"]
-                +"<br /><em>Durée :</em>&emsp;" + timeH(data["duration"])
-                +"<br /><em>Pays d'origine :</em>&emsp;" + data["countries"]
-                +"<br /><em>Score au Box-Office :</em>&emsp;" + data["worldwide_gross_income"]
-                +"<br /><em>Description :</em>&emsp;" + data["long_description"];
+                textModal.innerHTML ="<em># Titre : " + data["title"] + "</em>"
+                + "<br><em># Genre(s) : " + data["genres"] + "</em>"
+                + "<br><em># Date de sortie : " + data["date_published"] + "</em>"
+                + "<br><em># Note : " + data["rated"] + "</em>"
+                + "<br><em># Score IMDB : " + data["imdb_score"] + "</em>"
+                + "<br><em># Réalisateur : " + data["directors"] + "</em>"
+                + "<br><em># Acteurs : " + data["actors"] + "</em>"
+                + "<br><em># Durée : " + timeH(data["duration"]) + "</em>"
+                + "<br><em># Pays d'origine : " + data["countries"] + "</em>"
+                + "<br><em># Score au Box-Office : " + data["worldwide_gross_income"] + "</em>"
+                + "<br><em># Description : " + data["long_description"] + "</em>";
                 let modal = document.getElementById("modal");
                 modal.style.display = "block";
                 let backgroundModal = document.getElementsByClassName("background-modal")[0];
                 backgroundModal.style.display = "block";
                 body = document.getElementsByTagName("body")[0];
-                body.style.overflow = "hidden";
+                body.style.overflow = "scroll";
             })
         })
     }
@@ -67,29 +67,33 @@ closeModal.onclick = function(){
 }
 
 function bestMovie(movieUrl) {
-    let divTag = document.getElementsByClassName("img-best")[0];
-    // Créer la balise img qui contient l'image récupérée du meilleur film
-    imgTag = document.createElement("img");
-    divTag.appendChild(imgTag);
     let button = document.getElementsByClassName("button")[0];
     // Afficher la fenêtre modale si on clique sur le boutton ayant la propriété class="button"
     movieInfo(button, movieUrl);
     try {
         const movieJson = fetchData(movieUrl);
         movieJson.then(function(data) {
+            // Ajouter au document l'image du meilleur film comme background
+            let bestSection = document.getElementsByClassName("best-film")[0] ;
+            let imgUrl= data["image_url"];
+            bestSection.style.backgroundImage = "url(" + imgUrl + ")";
+            // Ajouter au document le titre du meilleur film
             let title = document.getElementsByClassName("title-best-film")[0];
-            title.innerHTML = data["title"];
+            title.innerHTML = "<span>Meilleur film : </span>" + data["title"];
+            // Ajouter au document la description du meilleur film
             let description = document.getElementsByClassName("description")[0];
-            description.innerHTML = data["long_description"];
+            description.innerHTML = "<br> <span>Description : </span>" + data["long_description"];
+
+            /* Ajouter l'image du meilleur film dans le document
+            // Créer la balise img qui contient l'image récupérée du meilleur film
+            let divTag = document.getElementsByClassName("img-best")[0];
+            imgTag = document.createElement("img");
+            divTag.appendChild(imgTag);
             // Ajouter les propriétés de la balise img
             imgTag.setAttribute("src", data["image_url"]);
             imgTag.setAttribute("alt", "Best movie");
-            imgTag.setAttribute("id", "best_movie");
-            let bestSection = document.getElementsByClassName("best-film")[0].innerHTML;
-            let imgUrl= imgTag.getAttribute("src");
-            bestSection.style.backgroundImage = imgUrl;
-            // bestSection.setAttribute("style", "background-image : url(imgUrl)";
-            // bestSection.setAttribute("style", "background-repeat: repeat");
+            imgTag.setAttribute("class", "best_movie");
+            */
         })
     }
     catch(error){
@@ -104,7 +108,7 @@ function fetchMovies(url, className, number=7, topMovie=false) {
         movies.then((moviesData) => {
             let info = moviesData["results"];
             for(i=0; i < info.length; i++) {
-                var movieUrl = info[i]["url"];
+                let movieUrl = info[i]["url"];
                 if (topMovie) {
                     // Récupérer les informations du meilleur film
                     bestMovie(movieUrl)
@@ -140,14 +144,14 @@ function fetchMovies(url, className, number=7, topMovie=false) {
     }
 }
 // Récupération d'informations des meilleurs films
-const urlMaxImdb = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score";
+let urlMaxImdb = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score";
 fetchMovies(urlMaxImdb, className="sevenBest", number=7, topMovie=true);
 // Récupération d'informations des films les mieux notés pour la catégrie "Comedy"
-const urlComedy = "http://localhost:8000/api/v1/titles/?genre=comedy&sort_by=-imdb_score";
+let urlComedy = "http://localhost:8000/api/v1/titles/?genre=comedy&sort_by=-imdb_score";
 fetchMovies(urlComedy, className="comedy");
 // Récupération d'informations des films les mieux notés pour la catégrie "Family"
-const urlFamily = "http://localhost:8000/api/v1/titles/?genre=family&sort_by=-imdb_score";
+let urlFamily = "http://localhost:8000/api/v1/titles/?genre=family&sort_by=-imdb_score";
 fetchMovies(urlFamily, className="family");
 // Récupération d'informations des films les mieux notés pour la catégrie "Action"
-const urlAction = "http://localhost:8000/api/v1/titles/?genre=action&sort_by=-imdb_score";
+let urlAction = "http://localhost:8000/api/v1/titles/?genre=action&sort_by=-imdb_score";
 fetchMovies(urlAction, className="action");

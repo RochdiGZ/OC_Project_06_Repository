@@ -6,21 +6,35 @@ body {
     background-color: black;
     margin : 25px
 }
-p, a {
-    font-size: 20px;
-    color: red;
+p {
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
 }
 a {
     text-decoration: none;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+
 }
 h2 {
-    color: red;
+    color: orange;
+}
+span {
+    color: white;
     font-size: 24px;
 }
-
+span:hover {
+    color: orange;
+    font-weigth: bold;
+}
 img {
     transition: 0.5s;
     cursor: pointer;
+}
+img:hover {
+  transform: scale(1.1);
 }
 .cursor-left, .cursor-right {
     max-height: 50px;
