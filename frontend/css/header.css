@@ -4,7 +4,7 @@
     align-items: center;
     background-color: rgb(98, 112, 124);
 }
-img.logo {
+.logo {
     transform: none;
     height: 50px;
     margin: 35px;
@@ -23,7 +23,7 @@ hr {
 .accueil {
     align-self: flex-start;
     display: flex;
-    margin: 15px;
+    margin-left: 5px;
 }
 .drop-down{
     width: 120px;
