@@ -84,7 +84,7 @@ function bestMovie(movieUrl) {
             let description = document.getElementsByClassName("description")[0];
             description.innerHTML = "<br> <span>Description : </span>" + data["long_description"];
 
-            /* Ajouter l'image du meilleur film dans le document
+            // Ajouter l'image du meilleur film dans le document
             // Créer la balise img qui contient l'image récupérée du meilleur film
             let divTag = document.getElementsByClassName("img-best")[0];
             imgTag = document.createElement("img");
@@ -93,7 +93,6 @@ function bestMovie(movieUrl) {
             imgTag.setAttribute("src", data["image_url"]);
             imgTag.setAttribute("alt", "Best movie");
             imgTag.setAttribute("class", "best_movie");
-            */
         })
     }
     catch(error){
