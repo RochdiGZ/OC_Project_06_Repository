@@ -1,10 +1,18 @@
 /* Ajouter les propriétés de l'image du meilleur film */
+.best_movie {
+    width: 728px;
+    height: 268px;
+    display: flex;
+}
+.best_movie:hover {
+    transform: none;
+}
 .best-film {
     display: flex;
     justify-content: space-around;
     border: black 5px solid;
     height: 268px;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     /*background-position: center;*/
 }
 .img-play {
