@@ -1,9 +1,9 @@
 from rest_framework import generics
 from django_filters import rest_framework as filters
 
-from backend.movies.models import Genre
-from backend.movies.serializers import GenreSerializer
-from backend.api.v1.titles.pagination import TitleSetPagination
+from movies.models import Genre
+from movies.serializers import GenreSerializer
+from api.v1.titles.pagination import TitleSetPagination
 from .filters import GenreFilterSet
 
 

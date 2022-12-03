@@ -4,7 +4,7 @@ from unittest.mock import Mock
 
 import pytest
 
-from backend.movies import normalizers as norm
+from movies import normalizers as norm
 
 
 class TestNormalizers:

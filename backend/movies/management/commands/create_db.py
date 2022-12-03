@@ -15,8 +15,8 @@ from django.core.management import call_command
 from django_tqdm import BaseCommand
 from django.conf import settings
 
-from backend.movies.models import Movie
-from backend.movies.normalizers import MovieNormalizer
+from movies.models import Movie
+from movies.normalizers import MovieNormalizer
 
 
 class Command(BaseCommand):

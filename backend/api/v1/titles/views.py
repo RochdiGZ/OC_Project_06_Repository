@@ -1,8 +1,8 @@
 from rest_framework import generics
 from django_filters import rest_framework as filters
 
-from backend.movies.models import Movie
-from backend.movies.serializers import MovieListSerializer, MovieDetailSerializer
+from movies.models import Movie
+from movies.serializers import MovieListSerializer, MovieDetailSerializer
 from .pagination import TitleSetPagination
 from .filters import TitleFilterSet
 

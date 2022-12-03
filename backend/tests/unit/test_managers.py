@@ -1,6 +1,6 @@
 import pytest
 
-from backend.movies import managers
+from movies import managers
 
 
 class TestUniqueNameManager:

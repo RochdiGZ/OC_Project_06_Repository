@@ -1,6 +1,6 @@
 from django_filters import rest_framework as filters
 
-from backend.movies.models import Movie
+from movies.models import Movie
 
 
 class TitleFilterSet(filters.FilterSet):

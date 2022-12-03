@@ -7,7 +7,7 @@ responsible to handle movies and their related data in the database.
 
 from django import db
 
-from backend.movies import models
+from movies import models
 
 
 class UniqueNameManager(db.models.Manager):

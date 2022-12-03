@@ -1,6 +1,6 @@
 from pytest_factoryboy import register
 
-from backend.movies import factories
+from movies import factories
 
 
 register(factories.ContributorFactory)

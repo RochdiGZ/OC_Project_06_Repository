@@ -1,6 +1,6 @@
 import pytest
 
-from backend.movies import models
+from movies import models
 
 
 @pytest.mark.django_db
@@ -36,6 +36,6 @@ class TestUniqueNameManager:
             'Mathieu Nebra'
         )
         assert (
-                models.Contributor.objects.get_by_natural_key('Mathieu Nebra').id
-                == result[0].id
+            models.Contributor.objects.get_by_natural_key('Mathieu Nebra').id
+            == result[0].id
         )
