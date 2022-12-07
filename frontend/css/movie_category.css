@@ -3,26 +3,39 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 450px;
+    height: 460px;
     background-color: black;
+    border: white 5px solid;
+}
+.film-section:hover {
+    border: rgb(52, 201, 36) 5px solid;
+}
+#best_rated, #comedy, #family, #action {
+    font-size : 32px;
+    color: white;
+    font-weight: bold;
 }
 .film-list {
     overflow: scroll;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(98, 112, 124);
-    height: 350px;
+    background-color: black;
+    height: 360px;
     width: 90%;
 }
 .film-list div{
-    height: 300px;
-    min-width: 250px;
-    padding: 72px 72px;
+    height: 288px;
+    min-width: 340px;
+    padding: 32px 32px;
     text-align: center;
 }
 .img-film {
     height: 268px;
-    width: 150%;
+    width: 100%;
     display: inline-block;
+    border: white 5px solid;
+}
+.img-film:hover {
+   border: rgb(212, 175, 55) 5px solid;
 }

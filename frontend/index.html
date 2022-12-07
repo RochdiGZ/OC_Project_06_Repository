@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JustStreamIt est une application web permettant de
+    visualiser en temps réel un classement de films intéressants.">
     <link rel="icon" href="./images/logo.ico">
     <link rel="stylesheet" href="./css/best_movie.css">
     <link rel="stylesheet" href="./css/header.css">
@@ -17,7 +19,7 @@
     <!-- Header -->
     <header class="ban">
         <img class="logo" src="./images/logo.png" alt="logo du site">
-        <p class="accueil">Accueil</p><hr>
+        <p class="accueil">Accueil</p>
         <ul class="drop-down">
                 <li>Catégories</li>
                 <li><a href=#comedy>Comedy</a></li>
@@ -29,18 +31,19 @@
     <main>
     <header class="best-film">
         <div class="in-best-film">
-            <h2 class="title-best-film">.</h2><br>
-            <p class="description"></p>
+            <em>Best movie</em>
+            <h2 class="title-best-film">Title</h2>
+            <h3 class="description">Description</h3>
             <span>
-                <img src="./images/play.png" class="img-play" alt="Play movie">
-                <img src="./images/more_info.png" class="button" alt="Best movie">
+                <input type="button" value="Play" class="play">
+                <input type="button" value="More info" class="button">
             </span>
         </div>
         <div class="img-best"></div>
     </header>
     <!-- Best movies of all -->
     <section class="film-section">
-        <hr><h2>Films les mieux notés</h2>
+        <h2 id="best_rated">Films les mieux notés</h2>
         <div class="film-list sevenBest">
             <img class="cursor-left" src="./images/left.png" alt="Défilement à gauche"
                  onclick="goLeft(bestFilms)">
@@ -50,7 +53,7 @@
     </section>
     <!-- Best movies of comedy genre -->
     <section class="film-section">
-        <hr><h2 id="comedy">Films les mieux notés de genre "Comedy"</h2>
+        <h2 id="comedy">Films les mieux notés de genre <em>"Comedy"</em></h2>
         <div class="film-list comedy">
             <img class="cursor-left" src="./images/left.png" alt="Défilement à gauche"
                  onclick="goLeft(zoneComedy)">
@@ -60,7 +63,7 @@
     </section>
     <!-- Best movies of family genre -->
     <section class="film-section">
-        <hr><h2 id="family">Films les mieux notés de genre "Family"</h2>
+        <h2 id="family">Films les mieux notés de genre <em>"Family"</em></h2>
         <div class="film-list family">
             <img class="cursor-left" src="./images/left.png" alt="Défilement à gauche"
                  onclick="goLeft(zoneFamily)">
@@ -70,14 +73,13 @@
     </section>
     <!-- Best movies of action genre -->
     <section class="film-section">
-        <hr><h2 id="action">Films les mieux notés de genre "Action"</h2>
+        <h2 id="action">Films les mieux notés de genre <em>"Action"</em></h2>
         <div class="film-list action">
             <img class="cursor-left" src="./images/left.png" alt="Défilement à gauche"
                  onclick="goLeft(zoneAction)">
             <img class="cursor-right" src="./images/right.png" alt="Défilement à droite"
                  onclick="goRight(zoneAction)">
         </div>
-        <hr>
     </section>
     <!-- modal window -->
     <div id="modal" class="background-modal">

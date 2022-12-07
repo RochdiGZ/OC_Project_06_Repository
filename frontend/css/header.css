@@ -16,7 +16,7 @@ hr {
 }
 .drop-down, .accueil, .drop-down li a{
     list-style: none;
-    font-size: 15px;
+    font-size: 24px;
     font-weight: 600;
     cursor: pointer;
 }
@@ -24,6 +24,7 @@ hr {
     align-self: flex-start;
     display: flex;
     margin-left: 5px;
+    padding-left: 75%;
 }
 .drop-down{
     width: 120px;

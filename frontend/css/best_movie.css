@@ -1,46 +1,55 @@
 /* Ajouter les propriétés de l'image du meilleur film */
+@font-face {
+  font-family: titleFont;
+  src: url("../fonts/Shojumaru-Regular.ttf");
+}
 .best_movie {
-    width: 728px;
-    height: 268px;
+    height: 450px;
+    width: 1024px;
+    opacity: 0.2;
     display: flex;
 }
 .best_movie:hover {
     transform: none;
 }
 .best-film {
+    padding-left: 60px;
+    border: white 5px solid;
     display: flex;
     justify-content: space-around;
-    border: black 5px solid;
-    height: 268px;
-    background-repeat: no-repeat;
-    /*background-position: center;*/
+    height: 450px;
 }
-.img-play {
-    width: 60px;
-    height: 16px;
-    cursor: pointer;
+.best-film:hover {
+    border: rgb(212, 175, 55) 5px solid; /* gold */
 }
-button {
-    width: 100px;
-    height: 20px;
-    background-color: gold;
+.play, .button {
+    border-radius: 5px;
+    padding: 5px;
     color: black;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
     cursor: pointer;
 }
-button:hover {
+.play {
+    background-color: white;
+    width: 100px;
+}
+.button {
+    background-color: grey;
+    width: 150px;
+}
+.button:hover {
     transform: scale(1.1);
+}
+h3 {
+    text-align: left;
 }
 .in-best-film {
     flex: 2;
-    padding: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 1000px;
+    max-width: 1680px;
 }
 .img-zone {
     flex: 1;
@@ -50,11 +59,18 @@ button:hover {
     height: 100%;
 }
 .title-best-film {
-    font-size: 30px;
+    font-size: 32px;
+    text-align: left;
+    text-transform : uppercase;
+    color: white;
+    font-family: titleFont, "Lucida Handwriting", Arial;
+    font-weight: bold;
+    width: 10%;
 }
 .description {
-    max-width: 1000px;
+    width : 728px;
+    text-align: left;
     font-weight: bold;
-    font-size: 24px;
-    color: orange;
+    font-size: 32px;
+    color: white;
 }

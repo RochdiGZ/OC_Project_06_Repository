@@ -12,16 +12,20 @@
     position: fixed;
     background-image: url("../images/movie_bg.png");
     border: rgb(98, 112, 124) 20px solid;
-    height: 50%;
-    bottom: 0%;
-    left: 0%;
-    right: 50%;
+    height: 80%;
+    left: 25%;
+    right: 25%;
+    top: 10%;
     padding: 0px 10px;
     z-index:5;
     overflow: scroll;
 }
 .modal-content {
     height: auto;
+}
+.img-modal {
+    width: 35%;
+    height: 35%;
 }
 .modal-content img {
     margin: 10px;
@@ -41,24 +45,26 @@
     font-size: 28px;
     cursor: pointer;
     z-index: 10;
-    right: 52%;
+    right: 27%;
 }
 .text-modal p {
     font-size: 16px;
     margin: 9px;
     margin-left: 5%;
-
-}
-em {
-    font-size: 25px;
-    font-style: normal;
-    font-weight: bold;
-    color: purple;
 }
 .text-modal {
     padding-top: 40px;
 }
-.img-modal {
-    width: 35%;
-    height: 35%;
+em {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: bold;
+    color: rgb(100, 100, 50);
+}
+strong {
+    text-decoration: underline;
+    font-size: 32px;
+}
+span {
+    font-size: 32px;
 }
