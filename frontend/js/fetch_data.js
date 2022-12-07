@@ -14,10 +14,10 @@ function timeH(time){
     if (time >= 60) {
         let hour = Math.floor(time/60);
         let minute = time % 60;
-        return hour + " h "+ minute + " min";
+        return hour + " h "+ minute + " min.";
     }
     else {
-        return time + "min";
+        return time + "min.";
     }
 }
 
@@ -33,17 +33,18 @@ function movieInfo(element, url){
                 imgTag.setAttribute("alt", "Movie image");
 
                 let textModal = document.getElementsByClassName("text-modal")[0];
-                textModal.innerHTML ="<em># Titre : " + data["title"] + "</em>"
-                + "<br><em># Genre(s) : " + data["genres"] + "</em>"
-                + "<br><em># Date de sortie : " + data["date_published"] + "</em>"
-                + "<br><em># Note : " + data["rated"] + "</em>"
-                + "<br><em># Score IMDB : " + data["imdb_score"] + "</em>"
-                + "<br><em># Réalisateur : " + data["directors"] + "</em>"
-                + "<br><em># Acteurs : " + data["actors"] + "</em>"
-                + "<br><em># Durée : " + timeH(data["duration"]) + "</em>"
-                + "<br><em># Pays d'origine : " + data["countries"] + "</em>"
-                + "<br><em># Score au Box-Office : " + data["worldwide_gross_income"] + "</em>"
-                + "<br><em># Description : " + data["long_description"] + "</em>";
+                textModal.innerHTML ="<strong>Titre</strong><span> : </span><em>"+data["title"]+"</em>"
+                + "<br><strong>Genre(s)</strong><span> : </span><em>"+data["genres"]+"</em>"
+                + "<br><strong>Date de sortie</strong><span> : </span><em>"+data["date_published"]+"</em>"
+                + "<br><strong>Note</strong><span> : </span><em>"+data["rated"]+"</em>"
+                + "<br><strong>Score IMDB</strong><span> : </span><em>"+data["imdb_score"]+"</em>"
+                + "<br><strong>Réalisateur</strong><span> : </span><em>"+data["directors"]+"</em>"
+                + "<br><strong>Acteurs</strong><span> : </span><em>"+data["actors"]+"</em>"
+                + "<br><strong>Durée</strong><span> : </span><em>"+timeH(data["duration"])+"</em>"
+                + "<br><strong>Pays d'origine</strong><span> : </span><em>"+data["countries"]+"</em>"
+                + "<br><strong>Résultat au Box Office</strong><span> : </span><em>"
+                + data["worldwide_gross_income"]+"</em>"
+                + "<br><strong>Résumé du film</strong><span> : </span><em>"+data["long_description"]+"</em>";
                 let modal = document.getElementById("modal");
                 modal.style.display = "block";
                 let backgroundModal = document.getElementsByClassName("background-modal")[0];
@@ -74,21 +75,26 @@ function bestMovie(movieUrl) {
         const movieJson = fetchData(movieUrl);
         movieJson.then(function(data) {
             // Ajouter au document l'image du meilleur film comme background
-            let bestSection = document.getElementsByClassName("best-film")[0] ;
+            let best = document.getElementsByClassName("best-film")[0] ;
             let imgUrl= data["image_url"];
-            bestSection.style.backgroundImage = "url(" + imgUrl + ")";
+            best.style.backgroundImage = "url(" + imgUrl + ")";
+            best.style.backgroundRepeat = "no-repeat";
+            best.style.backgroundSize = "100%";
+            best.style.backgroundPosition = "bottom 50px right";
+
             // Ajouter au document le titre du meilleur film
             let title = document.getElementsByClassName("title-best-film")[0];
-            title.innerHTML = "<span>Meilleur film : </span>" + data["title"];
+            title.innerHTML = data["title"];
             // Ajouter au document la description du meilleur film
             let description = document.getElementsByClassName("description")[0];
-            description.innerHTML = "<br> <span>Description : </span>" + data["long_description"];
+            description.innerHTML = "<em>Description</em>" + "<br>" + data["long_description"];
 
             // Ajouter l'image du meilleur film dans le document
             // Créer la balise img qui contient l'image récupérée du meilleur film
             let divTag = document.getElementsByClassName("img-best")[0];
             imgTag = document.createElement("img");
             divTag.appendChild(imgTag);
+
             // Ajouter les propriétés de la balise img
             imgTag.setAttribute("src", data["image_url"]);
             imgTag.setAttribute("alt", "Best movie");

@@ -12,21 +12,21 @@ for (cursorRight of cursorsRight){
     })
 }
 
-// Fonction pour le défilement latéral(fleches)
+// Fonction pour le défilement latéral des images
 let bestFilms = document.getElementsByClassName("sevenBest")[0];
 let zoneComedy = document.getElementsByClassName("comedy")[0];
 let zoneFamily = document.getElementsByClassName("family")[0];
 let zoneAction = document.getElementsByClassName("action")[0];
 function goLeft(zone){
     zone.scrollBy({
-        left : -450,
+        left : -400,
         behavior : "smooth"
     }
     )
 }
 function goRight(zone){
     zone.scrollBy({
-        left : 450,
+        left : 400,
         behavior : "smooth"
     }
     )
