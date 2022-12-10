@@ -15,6 +15,7 @@ B. Code structure
             * the file named index.html
             * the CSS files
             * the JS files
+            * the file named README.md
 
 C. The steps to follow to open the web page index.html :
 
