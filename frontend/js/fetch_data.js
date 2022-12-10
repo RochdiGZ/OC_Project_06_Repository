@@ -69,7 +69,7 @@ closeModal.onclick = function(){
 
 function bestMovie(movieUrl) {
     let button = document.getElementsByClassName("button")[0];
-    // Afficher la fenêtre modale si on clique sur le boutton ayant la propriété class="button"
+    // Afficher la fenêtre modale si on clique sur le bouton ayant la propriété class="button"
     movieInfo(button, movieUrl);
     try {
         const movieJson = fetchData(movieUrl);
@@ -78,9 +78,11 @@ function bestMovie(movieUrl) {
             let best = document.getElementsByClassName("best-film")[0] ;
             let imgUrl= data["image_url"];
             best.style.backgroundImage = "url(" + imgUrl + ")";
+            // Modifier les propriétés de background
             best.style.backgroundRepeat = "no-repeat";
             best.style.backgroundSize = "100%";
-            best.style.backgroundPosition = "bottom 50px right";
+            best.style.backgroundPosition = "24% 72%";
+            best.style.opacity = "0.8";
 
             // Ajouter au document le titre du meilleur film
             let title = document.getElementsByClassName("title-best-film")[0];
@@ -99,6 +101,7 @@ function bestMovie(movieUrl) {
             imgTag.setAttribute("src", data["image_url"]);
             imgTag.setAttribute("alt", "Best movie");
             imgTag.setAttribute("class", "best_movie");
+            imgTag.style.width = "100%";
         })
     }
     catch(error){
@@ -119,20 +122,21 @@ function fetchMovies(url, className, number=7, topMovie=false) {
                     bestMovie(movieUrl)
                     topMovie=false; // Récupérer les informations des autres meilleurs films
                 }
-                // Récupérer l'url de l'image du film
-                let imgUrl = info[i]["image_url"];
-                // Créer la balise img en ajoutant les propriétés class="img-film" et src=imgUrl
-                newImage = document.createElement("img");
-                newImage.setAttribute("class", "img-film");
-                newImage.setAttribute("src", imgUrl);
-                // Afficher la fenêtre modale si on clique sur l'image récupérée
-                movieInfo(newImage, movieUrl);
-                // Créer la balise div qui contient l'image récupérée d'une catégorie className
-                newDiv = document.createElement("div");
-                let section = document.getElementsByClassName(className)[0];
-                section.appendChild(newDiv);
-                newDiv.appendChild(newImage);
-
+                else {
+                    // Récupérer l'url de l'image du film
+                    let imgUrl = info[i]["image_url"];
+                    // Créer la balise img en ajoutant les propriétés class="img-film" et src=imgUrl
+                    newImage = document.createElement("img");
+                    newImage.setAttribute("class", "img-film");
+                    newImage.setAttribute("src", imgUrl);
+                    // Afficher la fenêtre modale si on clique sur l'image récupérée
+                    movieInfo(newImage, movieUrl);
+                    // Créer la balise div qui contient l'image récupérée d'une catégorie className
+                    newDiv = document.createElement("div");
+                    let section = document.getElementsByClassName(className)[0];
+                    section.appendChild(newDiv);
+                    newDiv.appendChild(newImage);
+                }
                 number--
                 if (number==0){
                     break;
@@ -151,7 +155,7 @@ function fetchMovies(url, className, number=7, topMovie=false) {
 // Récupération d'informations des meilleurs films
 let urlMaxImdb = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score";
 fetchMovies(urlMaxImdb, className="sevenBest", number=7, topMovie=true);
-// Récupération d'informations des films les mieux notés pour la catégrie "Comedy"
+// Récupération d'informations des films les mieux notés pour la catégorie "Comedy"
 let urlComedy = "http://localhost:8000/api/v1/titles/?genre=comedy&sort_by=-imdb_score";
 fetchMovies(urlComedy, className="comedy");
 // Récupération d'informations des films les mieux notés pour la catégrie "Family"

@@ -25,9 +25,9 @@
     width: 90%;
 }
 .film-list div{
-    height: 288px;
-    min-width: 340px;
-    padding: 32px 32px;
+    height: 90%;
+    min-width: 21%;
+    padding: 1.9% 1.8%;
     text-align: center;
 }
 .img-film {

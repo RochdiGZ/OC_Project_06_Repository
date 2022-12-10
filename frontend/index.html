@@ -27,74 +27,74 @@
                 <li><a href=#action>Action</a></li>
         </ul>
     </header>
+
     <!-- Best movie -->
     <main>
-    <header class="best-film">
-        <div class="in-best-film">
-            <em>Best movie</em>
-            <h2 class="title-best-film">Title</h2>
-            <h3 class="description">Description</h3>
-            <span>
-                <input type="button" value="Play" class="play">
-                <input type="button" value="More info" class="button">
-            </span>
-        </div>
-        <div class="img-best"></div>
-    </header>
-    <!-- Best movies of all -->
-    <section class="film-section">
-        <h2 id="best_rated">Films les mieux notés</h2>
-        <div class="film-list sevenBest">
-            <img class="cursor-left" src="./images/left.png" alt="Défilement à gauche"
-                 onclick="goLeft(bestFilms)">
-            <img class="cursor-right" src="./images/right.png" alt="Défilement à droite"
-                 onclick="goRight(bestFilms)">
-        </div>
-    </section>
-    <!-- Best movies of comedy genre -->
-    <section class="film-section">
-        <h2 id="comedy">Films les mieux notés de genre <em>"Comedy"</em></h2>
-        <div class="film-list comedy">
-            <img class="cursor-left" src="./images/left.png" alt="Défilement à gauche"
-                 onclick="goLeft(zoneComedy)">
-            <img class="cursor-right" src="./images/right.png" alt="Défilement à droite"
-                 onclick="goRight(zoneComedy)">
-        </div>
-    </section>
-    <!-- Best movies of family genre -->
-    <section class="film-section">
-        <h2 id="family">Films les mieux notés de genre <em>"Family"</em></h2>
-        <div class="film-list family">
-            <img class="cursor-left" src="./images/left.png" alt="Défilement à gauche"
-                 onclick="goLeft(zoneFamily)">
-            <img class="cursor-right" src="./images/right.png" alt="Défilement à droite"
-                 onclick="goRight(zoneFamily)">
-        </div>
-    </section>
-    <!-- Best movies of action genre -->
-    <section class="film-section">
-        <h2 id="action">Films les mieux notés de genre <em>"Action"</em></h2>
-        <div class="film-list action">
-            <img class="cursor-left" src="./images/left.png" alt="Défilement à gauche"
-                 onclick="goLeft(zoneAction)">
-            <img class="cursor-right" src="./images/right.png" alt="Défilement à droite"
-                 onclick="goRight(zoneAction)">
-        </div>
-    </section>
-    <!-- modal window -->
-    <div id="modal" class="background-modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div>
-                <img class="img-modal" src="./images/movie_bg.png" alt="Movie image">
+        <header class="best-film">
+            <div class="in-best-film">
+                <em>Best movie</em>
+                <h2 class="title-best-film">Title</h2>
+                <span>
+                    <!-- <button class="play">Play</button> -->
+                    <button class="button">More info</button>
+                </span>
+                <h3 class="description">Description</h3>
             </div>
-            <div class="text-modal">
-                <p></p>
+            <div class="img-best"></div>
+        </header>
+
+        <!-- Best movies of all -->
+        <section class="film-section">
+            <h2 id="best_rated">Films les mieux notés</h2>
+            <div class="film-list sevenBest">
+                <img class="cursor-left" src="./images/left.png" alt="Défilement à gauche">
+                <img class="cursor-right" src="./images/right.png" alt="Défilement à droite">
+            </div>
+        </section>
+
+        <!-- Best movies of comedy genre -->
+        <section class="film-section">
+            <h2 id="comedy">Films les mieux notés de genre <em>"Comedy"</em></h2>
+            <div class="film-list comedy">
+                <img class="cursor-left" src="./images/left.png" alt="Défilement à gauche">
+                <img class="cursor-right" src="./images/right.png" alt="Défilement à droite">
+            </div>
+        </section>
+
+        <!-- Best movies of family genre -->
+        <section class="film-section">
+            <h2 id="family">Films les mieux notés de genre <em>"Family"</em></h2>
+            <div class="film-list family">
+                <img class="cursor-left" src="./images/left.png" alt="Défilement à gauche">
+                <img class="cursor-right" src="./images/right.png" alt="Défilement à droite">
+            </div>
+        </section>
+
+        <!-- Best movies of action genre -->
+        <section class="film-section">
+            <h2 id="action">Films les mieux notés de genre <em>"Action"</em></h2>
+            <div class="film-list action">
+                <img class="cursor-left" src="./images/left.png" alt="Défilement à gauche">
+                <img class="cursor-right" src="./images/right.png" alt="Défilement à droite">
+            </div>
+        </section>
+
+        <!-- modal window -->
+        <div id="modal" class="background-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div>
+                    <img class="img-modal" src="./images/movie_bg.png" alt="Movie image">
+                </div>
+                <div class="text-modal">
+                    <p></p>
+                </div>
             </div>
         </div>
-    </div>
     </main>
+
     <script src="./js/carousel.js"></script>
     <script src="./js/fetch_data.js"></script>
+
 </body>
 </html>
