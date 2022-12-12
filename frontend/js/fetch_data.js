@@ -81,7 +81,7 @@ function bestMovie(movieUrl) {
             // Modifier les propriétés de background
             best.style.backgroundRepeat = "no-repeat";
             best.style.backgroundSize = "100%";
-            best.style.backgroundPosition = "24% 72%";
+            best.style.backgroundPosition = "bottom 50px right";
             best.style.opacity = "0.8";
 
             // Ajouter au document le titre du meilleur film
